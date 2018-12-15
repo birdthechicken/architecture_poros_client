@@ -1,0 +1,16 @@
+
+<div class="row">
+  <div class="col-md-6 offset-md-3 show-info">
+    <h2><%= @building["name"] %></h2>
+    <h3><%= @building["address"] %></h3>
+
+    <h5>Built In <%= @building["construction_date"] %></h5>
+    <h5>Height: <%= @building["height"] %>'</h5>
+
+    <h4>Architect: <%= @building["architect"] %></h4>
+
+    <a class="btn btn-gold" href="/client/buildings/<%= @building['id'] %>/edit">Edit</a>
+    <a class="btn btn-gold" href="/client/buildings/<%= @building['id'] %>" data-method="delete">Delete</a>
+  </div>
+</div>
+
