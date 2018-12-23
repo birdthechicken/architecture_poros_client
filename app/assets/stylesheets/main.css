@@ -14,11 +14,12 @@ body {
 
 nav {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#18274b+1,18274b+100&1+0,1+81,0+100 */
-background: -moz-linear-gradient(top, rgba(24,39,75,1) 0%, rgba(24,39,75,1) 1%, rgba(24,39,75,1) 81%, rgba(24,39,75,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(24,39,75,1) 0%,rgba(24,39,75,1) 1%,rgba(24,39,75,1) 81%,rgba(24,39,75,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(24,39,75,1) 0%,rgba(24,39,75,1) 1%,rgba(24,39,75,1) 81%,rgba(24,39,75,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18274b', endColorstr='#0018274b',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top, rgba(24,39,75,1) 0%, rgba(24,39,75,1) 1%, rgba(24,39,75,1) 81%, rgba(24,39,75,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(24,39,75,1) 0%,rgba(24,39,75,1) 1%,rgba(24,39,75,1) 81%,rgba(24,39,75,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(24,39,75,1) 0%,rgba(24,39,75,1) 1%,rgba(24,39,75,1) 81%,rgba(24,39,75,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18274b', endColorstr='#0018274b',GradientType=0 ); /* IE6-9 */
 
+  z-index: 2;
 }
 
 .navbar-brand {
@@ -29,6 +30,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18274b', end
   color: #CEBE64;
 }
 
+
 #outside-border {
   border: solid #18274B 15px;
   border-radius: 27px;
@@ -37,18 +39,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18274b', end
   width: 100%;
   box-shadow: 0 0 0 15px #18274B;
   outline: 15px solid #18274B;
+  overflow: scroll;
+  pointer-events: none;
+  z-index: 1;
 }
 
 #outside-border:before {
+  z-index: 1;
   content: " ";
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
   border: 5px solid #CEAB64;
   border-radius: 13px;
+  /*pointer-events: none;*/
+}
+
+#clickable {
+  pointer-events: auto;
+}
+
+.under-content {
+  z-index: -1;
 }
 
 .card {
